@@ -31,6 +31,7 @@ class Product(models.Model):
     description = models.TextField(blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='uploads', blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
     
@@ -69,6 +70,6 @@ class Product(models.Model):
         thumb_io = BytesIO()
         img.save(thumb_io, 'JPEG', quality=85)
 
-        thumbnail = FIle(thumb_io, name=image.name)
+        thumbnail = File(thumb_io, name=image.name)
 
         return thumbnail
