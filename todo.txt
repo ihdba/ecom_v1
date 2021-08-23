@@ -4,7 +4,7 @@
 -DONE Set up the base template
 -DONE Create django app and models for products
 -DONE Create serializers and views for the products
--Create simple front page (latest products)
+-DONE Create simple front page (latest products)
 -View a product
 	-Create viewset in Django
 	-Create vue page for showing the product
@@ -17,3 +17,9 @@
 	-Show a toast message
 -Make it possible to sign up
 -Make it possible to log in-Create a simple account page
+
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+]
