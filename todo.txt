@@ -10,13 +10,38 @@
 	-DONE Create vue page for showing the product
 	-DONE Add link to detail page
 -DONE Set up Vuex / State
--Make it possible to add to card
-	-Add functionality to Vuex
-	-Initialize store in app.vue
-	-Add button to product page
-	-Show a toast message
+-DONE Make it possible to add to card
+		-Add functionality to Vuex
+		-Initialize store in app.vue
+		-Add button to product page
+		-Show a toast message
+-Implement a loading bar
+-Set document tile (All pages)
+-Make it possible to view a category
+	-Convert the product to a Component
+-Add search functionality
+-View cart.
+	-A cart item should be a Component
+-Change contents of the cart.	
+	-Increment/decrement content.
+	-Remove from the cart
+-Proceed to checkout (Authentication)
+-Create a simple success page
+-Show my orders on the same account page	
+	-An order should be a component.
 -Make it possible to sign up
 -Make it possible to log in-Create a simple account page
+
+
+
+
+
+
+
+
+
+
+
 
 
 
