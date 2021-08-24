@@ -23,7 +23,7 @@
               <router-link to="/log-in" class="button is-light">Log in</router-link>
               <router-link to="/cart" class="button is-success">
                 <spam class="icon"><i class="fas fa-shoping-cart"></i> </spam>
-                <spam>Cart</spam>
+                <spam>Cart ({{ cartTotalLength }})</spam>
               </router-link>
             </div>
           </div>
@@ -44,10 +44,32 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return{
       showMobileMenu: false,
+      cart: {
+        items: []
+      }
+    }
+  },
+  beforeCreate() {
+    this.$store.commit('initializeStore')
+  },
+  mounted() {
+    this.cart = this.$store.state.cart
+  },
+  computed: {
+    cartTotalLength() {
+      let totalLength = 0
+
+      for (let i = 0; i < this.cart.items.length; i++) {
+        totalLength += this.cart.items[i].quantity
+      }
+
+      return totalLength
     }
   }
 }

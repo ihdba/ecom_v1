@@ -14,7 +14,7 @@
             <div class="column is-3">
                 <h2 class="subtitle">Information</h2>
 
-                <p><strong>Price: </strong>${{ product.price }}</p>
+                <p><strong>Price: </strong>{{ product.price }} NOK</p>
 
                 <div class="field has-addons mt-6">
                     <div class="control">
@@ -57,6 +57,18 @@ export default {
                 .catch(error =>{
                     console.log(error)
                 })
+        },
+        addToCart() {
+            if (isNaN(this.quantity) || this.quantity < 1) {
+                this.quantity = 1
+            }
+
+            const item = {
+                product: this.product,
+                quantity: this.quantity
+            }
+
+            this.$store.commit('addToCart', item)
         }
     }
 }
